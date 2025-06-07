@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NeoFetch.Modules
 {
-    internal class GpuInfo
+    public class GpuInfo
     {
     }
 }
