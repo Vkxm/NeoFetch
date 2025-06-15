@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Management;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,8 +13,14 @@ namespace NeoFetch.Modules
 
         public string GetInfo()
         {
-            return Environment.GetEnvironmentVariable("PROCESSOR_IDENTIFIER") ?? "Unknown";
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT Name FROM Win32_Processor");
+            foreach (ManagementObject obj in searcher.Get())
+            {
+                return obj["Name"].ToString();
+            }
+            return "Unknown";
         }
+       
     }
 
 }

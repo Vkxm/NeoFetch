@@ -4,17 +4,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Spectre.Console;
 namespace NeoFetch.Printing
 {
     public class Renderer
     {
         public static void Render(List<ISystemModule> modules)
         {
+            var table = new Table();
+            
+            table.AddColumn("Title");
+            table.AddColumn("Description");
+            
             foreach (var module in modules)
             {
-                Console.WriteLine($"{module.Name,-10}: {module.GetInfo()}");
+                table.AddRow(module.Name, module.GetInfo());
+               
             }
+            AnsiConsole.Write(table);
         }
     }
 

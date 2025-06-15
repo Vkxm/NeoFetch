@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Management;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Management;
 namespace NeoFetch.Modules
 {
     public class OsInfo : ISystemModule
@@ -13,10 +14,17 @@ namespace NeoFetch.Modules
 
         public string GetInfo()
         {
-            string osDescription = RuntimeInformation.OSDescription;
-            string osArch = RuntimeInformation.OSArchitecture.ToString();
+            
+            string edition = "";
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT Caption FROM Win32_OperatingSystem");
 
-            return $"{osDescription} ({osArch})";
+            foreach (ManagementObject os in searcher.Get())
+            {
+                edition = os["Caption"].ToString();
+            }
+            return edition;
+        
         }
+
     }
 }
