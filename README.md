@@ -18,11 +18,11 @@ A lightweight, Neofetch-inspired system information tool for Windows, written in
 ## 📦 Installation
 
 ### Method 1: Binary Release
-Download the latest executable from [Releases](https://github.com/yourusername/WinFetch/releases).
+Download the latest executable from [Releases](https://github.com/Vkxm/NeoFetch/releases).
 
 ### Method 2: Build from Source
 ```bash
-git clone https://github.com/yourusername/WinFetch.git
+git clone https://github.com/Vkxm/NeoFetch.git
 cd WinFetch
 dotnet build -c Release
 dotnet publish -c Release -r win-x64 --self-contained true
