@@ -12,15 +12,17 @@ namespace NeoFetch.Printing
         public static void Render(List<ISystemModule> modules)
         {
             var table = new Table();
-            
+
             table.AddColumn("Title");
             table.AddColumn("Description");
-            
+
             foreach (var module in modules)
             {
                 table.AddRow(module.Name, module.GetInfo());
-               
+
             }
+            AnsiConsole.WriteLine($"{Environment.UserName}@{Environment.MachineName}");
+
             AnsiConsole.Write(table);
         }
     }

@@ -10,8 +10,10 @@ class Program
 
             new OsInfo(),
             new CpuInfo(),
+            new GpuInfo(),
             new MemoryInfo(),
-            new GpuInfo()
+            new DiskInfo(),
+            
         };
 
         Renderer.Render(modules);
