@@ -7,13 +7,12 @@ class Program
     {
         var modules = new List<ISystemModule>
         {
-
             new OsInfo(),
             new CpuInfo(),
             new GpuInfo(),
             new MemoryInfo(),
             new DiskInfo(),
-            
+
         };
 
         Renderer.Render(modules);

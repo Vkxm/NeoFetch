@@ -12,6 +12,7 @@ namespace NeoFetch.Modules
         public string GetInfo()
         {
             var driveC= new DriveInfo("C");
+
             return $"{driveC.TotalSize / (1024 * 1024 * 1024)} GB";
         }
     }
