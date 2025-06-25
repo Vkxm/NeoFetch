@@ -5,7 +5,7 @@
 
 A lightweight, Neofetch-inspired system information tool for Windows, written in C#. Displays hardware/OS details with customizable ASCII art.
 
-<!-- ![Example Output](docs/screenshot.png) -->
+
 
 ## ✨ Features
 
